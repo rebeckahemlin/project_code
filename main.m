@@ -23,7 +23,7 @@ mu = ones(my, mx) * (22.7* 10^9);
 rho = ones(my, mx) * (2700); 
 
 room_x = round(mx*0.6):round(mx*0.9);
-room_y = round(my*0.5):round(my*0.8);
+room_y = round(my*0.7):round(my*1);
 
 lambda(room_y, room_x) = 2.2 * 10^9; % Bulk modulus for water (approx. 2.2 GPa)
 mu(room_y, room_x) = 0; % Shear modulus of a fluid is zero (no S-waves)
@@ -148,7 +148,7 @@ B = [B11, B12; B21, B22];
 
 %% Frequency domain 
 
-freq = 10; % Hz
+freq = 10.05; % Hz
 alpha = 2*pi*freq; 
 
 % Implementation of matrix from the time independent problem formulation
@@ -207,10 +207,14 @@ ylabel('Domain height [meter]');
 title(title_text);
 saveas(fig, file_name);
 
+disp("First plot done")
+
 room_x_boundaries_exl = round(mx*(0.6+0.06)):round(mx*(0.9-0.06));
 room_y_boundaries_exl = round(my*(0.5+0.06)):round(my*(0.8-0.06));
 
 
+
+%{
 % Frequency sweep
 freq_vec = linspace(4, 20, 100); 
 max_room_amp = zeros(size(freq_vec)); 
@@ -250,3 +254,4 @@ saveas(fig2, 'frequency_sweep');
 
 disp('Code finished')
 
+%}
