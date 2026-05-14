@@ -3,8 +3,8 @@
 clear
 
 % Grid parameters
-mx = 140; % Grid points
-my = 140;
+mx = 280; % Grid points
+my = 280;
 Lx = 1000; % Domain lenght
 Ly = 1000;
 hx = Lx/(mx-1); % Step lenght 
@@ -148,7 +148,7 @@ B = [B11, B12; B21, B22];
 
 %% Frequency domain 
 
-freq = 4; % Hz
+freq = 10; % Hz
 alpha = 2*pi*freq; 
 
 % Implementation of matrix from the time independent problem formulation
@@ -212,7 +212,7 @@ room_y_boundaries_exl = round(my*(0.5+0.06)):round(my*(0.8-0.06));
 
 
 % Frequency sweep
-freq_vec = linspace(4, 12, 100); 
+freq_vec = linspace(4, 20, 100); 
 max_room_amp = zeros(size(freq_vec)); 
 for i = 1:length(freq_vec)
     f_current = freq_vec(i);
