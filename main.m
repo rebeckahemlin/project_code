@@ -3,8 +3,8 @@
 clear
 
 % Grid parameters
-mx = 280; % Grid points
-my = 280;
+mx = 220; % Grid points
+my = 220;
 Lx = 1000; % Domain lenght
 Ly = 1000;
 hx = Lx/(mx-1); % Step lenght 
@@ -148,7 +148,7 @@ B = [B11, B12; B21, B22];
 
 %% Frequency domain 
 
-freq = 10.05; % Hz
+freq = 10.04; % Hz
 alpha = 2*pi*freq; 
 
 % Implementation of matrix from the time independent problem formulation
