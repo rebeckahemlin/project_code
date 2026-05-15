@@ -148,7 +148,7 @@ B = [B11, B12; B21, B22];
 
 %% Frequency domain 
 
-freq = 10; % Hz
+freq = 7.36735; % Hz
 alpha = 2*pi*freq; 
 
 % Implementation of matrix from the time independent problem formulation
