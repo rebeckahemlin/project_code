@@ -148,7 +148,7 @@ B = [B11, B12; B21, B22];
 
 %% Frequency domain 
 
-freq = 10.04; % Hz
+freq = 10.01; % Hz
 alpha = 2*pi*freq; 
 
 % Implementation of matrix from the time independent problem formulation
@@ -209,17 +209,16 @@ saveas(fig, file_name);
 
 disp("First plot done")
 
-room_x_boundaries_exl = round(mx*(0.6+0.06)):round(mx*(0.9-0.06));
-room_y_boundaries_exl = round(my*(0.5+0.06)):round(my*(0.8-0.06));
+room_x_boundaries_exl = round(mx*(0.6+0.03)):round(mx*(0.9-0.03));
+room_y_boundaries_exl = round(my*(0.7+0.03)):round(my*(1-0.03));
 
 
-
-%{
 % Frequency sweep
-freq_vec = linspace(4, 20, 100); 
+freq_vec = linspace(4, 15, 50); 
 max_room_amp = zeros(size(freq_vec)); 
 for i = 1:length(freq_vec)
     f_current = freq_vec(i);
+    disp("new for loop started")
     alpha = 2 * pi * f_current;
     
     M11 = -(A_tilde + Rho_Full * alpha^2); 
@@ -254,4 +253,3 @@ saveas(fig2, 'frequency_sweep');
 
 disp('Code finished')
 
-%}
