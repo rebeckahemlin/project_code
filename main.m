@@ -3,8 +3,8 @@
 clear
 
 % Grid parameters
-mx = 230; % Grid points
-my = 230;
+mx = 220; % Grid points
+my = 220;
 Lx = 1000; % Domain lenght
 Ly = 1000;
 hx = Lx/(mx-1); % Step lenght 
@@ -201,7 +201,7 @@ imagesc(x, y, max_amp);
 axis xy; 
 axis square;
 colorbar;
-clim([0, max(max_amp(:)) * 1]);
+clim([0, 0.003]);
 xlabel('Domain width [meter]');
 ylabel('Domain height [meter]');
 title(title_text);
