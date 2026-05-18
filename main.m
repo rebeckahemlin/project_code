@@ -3,8 +3,8 @@
 clear
 
 % Grid parameters
-mx = 220; % Grid points
-my = 220;
+mx = 160; % Grid points
+my = 160;
 Lx = 1000; % Domain lenght
 Ly = 1000;
 hx = Lx/(mx-1); % Step lenght 
@@ -148,7 +148,7 @@ B = [B11, B12; B21, B22];
 
 %% Frequency domain 
 
-freq = 7.36735; % Hz
+freq = 5.5; % Hz
 alpha = 2*pi*freq; 
 
 % Implementation of matrix from the time independent problem formulation
@@ -209,11 +209,9 @@ saveas(fig, file_name);
 
 disp("First plot done")
 
-room_x_boundaries_exl = round(mx*(0.6+0.03)):round(mx*(0.9-0.03));
-room_y_boundaries_exl = round(my*(0.7+0.03)):round(my*(1-0.03));
+room_x_boundaries_exl = round(mx*(0.6+0.06)):round(mx*(0.9-0.06));
+room_y_boundaries_exl = round(my*(0.7+0.06)):round(my*(1-0.06));
 
-
-%{
 
 % Frequency sweep
 freq_vec = linspace(4, 15, 50); 
@@ -255,4 +253,4 @@ saveas(fig2, 'frequency_sweep');
 
 disp('Code finished')
 
-%}
+
